@@ -6,13 +6,24 @@ namespace sbavalonia.symbols
 {
     public class Symbol : Image
     {
+        /////////////////////////////////////////////////////////
+        #region Fields
+
+        private string _SymbolName = string.Empty;
+
+        #endregion Fields
+        /////////////////////////////////////////////////////////
+
+
+
+        /////////////////////////////////////////////////////////
+        #region Properties
+
         public static readonly DirectProperty<Symbol, string> SymbolNameProperty =
             AvaloniaProperty.RegisterDirect<Symbol, string>(
                 nameof(SymbolName),
                 o => o.SymbolName,
                 (o, v) => { o.SymbolName = v; });
-
-        private string _SymbolName = string.Empty;
 
         public string SymbolName
         {
@@ -23,7 +34,14 @@ namespace sbavalonia.symbols
             }
         }
 
-		
+        #endregion Properties
+        /////////////////////////////////////////////////////////
+
+
+
+        /////////////////////////////////////////////////////////
+        #region Interface
+
         public Symbol() :
             base()
         {
@@ -33,9 +51,28 @@ namespace sbavalonia.symbols
             SymbolManager.SymbolColorChanged += SymbolManager_SymbolColorChanged;
         }
 
+        public void ApplySourceToSymbol()
+        {
+            SymbolManager.Symbols.TryGetValue(SymbolName, out WriteableBitmap? bitmap);
+            if (bitmap is not null)
+            {
+                Source = bitmap;
+
+                // In WPF this isn't necessary but it seems it is here in Avalonia
+                InvalidateVisual();
+            }
+        }
+
+        #endregion Interface
+        /////////////////////////////////////////////////////////
+
+
+
+        /////////////////////////////////////////////////////////
+        #region Internal
+
         private void SymbolManager_SymbolColorChanged(object? sender, EventArgs e)
         {
-            sbdotnet.Logger.Notify("SymbolManager_SymbolColorChanged");
             ApplySourceToSymbol();
         }
 
@@ -43,25 +80,12 @@ namespace sbavalonia.symbols
         {
             if (e.Property.Name.Equals(nameof(SymbolName)))
             {
-                //ApplySourceToSymbol();
-                //SymbolManager.LoadSymbol(SymbolName);
-                //PropertyChanged += Symbol_PropertyChanged;
-                //SymbolManager.SymbolColorChanged += SymbolManager_SymbolColorChanged;
                 SymbolManager.LoadSymbol(SymbolName);
                 ApplySourceToSymbol();
             }
         }
 
-        public void ApplySourceToSymbol()
-        {
-            SymbolManager.Symbols.TryGetValue(SymbolName, out WriteableBitmap? bitmap);
-            if(bitmap is not null)
-            {
-                Source = bitmap;
-
-                // In WPF this isn't necessary but it is here in Avalonia
-                InvalidateVisual();
-            }
-        }
+        #endregion Internal
+        /////////////////////////////////////////////////////////        
 	}
 }
