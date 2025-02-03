@@ -1,0 +1,31 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:DemoTest.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+		xmlns:sym="using:sbavalonia.symbols"
+        x:Class="DemoTest.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="DemoTest">
+
+    <Design.DataContext>
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+
+	<StackPanel Orientation="Horizontal">
+		<sym:Symbol SymbolName="add" Width="32" Height="32"/>
+		<sym:Symbol SymbolName="arrow_up" Width="32" Height="32"/>
+		<sym:Symbol SymbolName="close" Width="32" Height="32"/>
+		<Button Width="100" Height="30" Command="{Binding ToggleSymbolCommand}">
+			<Button.Content>
+				<StackPanel Orientation="Horizontal">
+					<sym:Symbol x:Name="sym" SymbolName="{Binding SymName}" Width="24" Height="24" VerticalAlignment="Center"/>
+					<TextBlock Text="button" Margin="5,0,0,0" VerticalAlignment="Center"/>
+				</StackPanel>
+			</Button.Content>
+		</Button>
+	</StackPanel>
+
+</Window>

@@ -1,0 +1,538 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+	<ItemGroup>
+		<AvaloniaResource Include="Symbols/**" Link="Symbols/%(RecursiveDir)%(FileName)%(Extension)" />
+	</ItemGroup>
+  
+  <ItemGroup>
+    <None Remove="symbols\add.png" />
+    <None Remove="symbols\add_attachment.png" />
+    <None Remove="symbols\add_image.png" />
+    <None Remove="symbols\alarm.png" />
+    <None Remove="symbols\arrow_back.png" />
+    <None Remove="symbols\arrow_down.png" />
+    <None Remove="symbols\arrow_down2.png" />
+    <None Remove="symbols\arrow_down3.png" />
+    <None Remove="symbols\arrow_drop_down.png" />
+    <None Remove="symbols\arrow_forward.png" />
+    <None Remove="symbols\arrow_right.png" />
+    <None Remove="symbols\arrow_up.png" />
+    <None Remove="symbols\arrow_up2.png" />
+    <None Remove="symbols\arrow_up3.png" />
+    <None Remove="symbols\attach_email.png" />
+    <None Remove="symbols\attach_file.png" />
+    <None Remove="symbols\book.png" />
+    <None Remove="symbols\bookmark.png" />
+    <None Remove="symbols\bookmarks.png" />
+    <None Remove="symbols\bookmark_add.png" />
+    <None Remove="symbols\browser1.png" />
+    <None Remove="symbols\cancel.png" />
+    <None Remove="symbols\check.png" />
+    <None Remove="symbols\check_circle.png" />
+    <None Remove="symbols\chevron_left.png" />
+    <None Remove="symbols\chevron_right.png" />
+    <None Remove="symbols\close.png" />
+    <None Remove="symbols\contact.png" />
+    <None Remove="symbols\content_copy.png" />
+    <None Remove="symbols\content_cut.png" />
+    <None Remove="symbols\content_paste.png" />
+    <None Remove="symbols\delete.png" />
+    <None Remove="symbols\double_arrow_down.png" />
+    <None Remove="symbols\double_arrow_left.png" />
+    <None Remove="symbols\double_arrow_right.png" />
+    <None Remove="symbols\double_arrow_up.png" />
+    <None Remove="symbols\download.png" />
+    <None Remove="symbols\draft.png" />
+    <None Remove="symbols\drafts.png" />
+    <None Remove="symbols\edit.png" />
+    <None Remove="symbols\edit2.png" />
+    <None Remove="symbols\email.png" />
+    <None Remove="symbols\encrypted.png" />
+    <None Remove="symbols\encrypted_add.png" />
+    <None Remove="symbols\envelope.png" />
+    <None Remove="symbols\error.png" />
+    <None Remove="symbols\exclamation.png" />
+    <None Remove="symbols\exclamation2.png" />
+    <None Remove="symbols\expand_circle.png" />
+    <None Remove="symbols\explore.png" />
+    <None Remove="symbols\favorite.png" />
+    <None Remove="symbols\feedback.png" />
+    <None Remove="symbols\file_open.png" />
+    <None Remove="symbols\find.png" />
+    <None Remove="symbols\folder.png" />
+    <None Remove="symbols\format_align_center.png" />
+    <None Remove="symbols\format_align_left.png" />
+    <None Remove="symbols\format_align_right.png" />
+    <None Remove="symbols\format_bold.png" />
+    <None Remove="symbols\format_italic.png" />
+    <None Remove="symbols\format_size.png" />
+    <None Remove="symbols\format_underlined.png" />
+    <None Remove="symbols\group.png" />
+    <None Remove="symbols\help.png" />
+    <None Remove="symbols\home.png" />
+    <None Remove="symbols\image.png" />
+    <None Remove="symbols\inbox.png" />
+    <None Remove="symbols\key.png" />
+    <None Remove="symbols\key_off.png" />
+    <None Remove="symbols\key_vertical.png" />
+    <None Remove="symbols\label.png" />
+    <None Remove="symbols\language.png" />
+    <None Remove="symbols\library_add.png" />
+    <None Remove="symbols\link.png" />
+    <None Remove="symbols\lock.png" />
+    <None Remove="symbols\lock_open.png" />
+    <None Remove="symbols\login.png" />
+    <None Remove="symbols\mail.png" />
+    <None Remove="symbols\mail_attach.png" />
+    <None Remove="symbols\mark_as_unread2.png" />
+    <None Remove="symbols\mark_email_unread.png" />
+    <None Remove="symbols\menu.png" />
+    <None Remove="symbols\menu_book.png" />
+    <None Remove="symbols\mic.png" />
+    <None Remove="symbols\mic_off.png" />
+    <None Remove="symbols\minimize.png" />
+    <None Remove="symbols\more_horiz.png" />
+    <None Remove="symbols\more_vert.png" />
+    <None Remove="symbols\music_note.png" />
+    <None Remove="symbols\music_off.png" />
+    <None Remove="symbols\notification.png" />
+    <None Remove="symbols\outbox.png" />
+    <None Remove="symbols\passkey.png" />
+    <None Remove="symbols\password.png" />
+    <None Remove="symbols\password_2.png" />
+    <None Remove="symbols\people.png" />
+    <None Remove="symbols\person.png" />
+    <None Remove="symbols\person_add.png" />
+    <None Remove="symbols\person_card.png" />
+    <None Remove="symbols\person_page.png" />
+    <None Remove="symbols\person_search.png" />
+    <None Remove="symbols\postoffice.png" />
+    <None Remove="symbols\question_mark.png" />
+    <None Remove="symbols\redo.png" />
+    <None Remove="symbols\refresh.png" />
+    <None Remove="symbols\remove.png" />
+    <None Remove="symbols\search.png" />
+    <None Remove="symbols\searchbox.png" />
+    <None Remove="symbols\send.png" />
+    <None Remove="symbols\settings.png" />
+    <None Remove="symbols\severe_error.png" />
+    <None Remove="symbols\share.png" />
+    <None Remove="symbols\sort.png" />
+    <None Remove="symbols\star.png" />
+    <None Remove="symbols\sync.png" />
+    <None Remove="symbols\timelapse.png" />
+    <None Remove="symbols\timer.png" />
+    <None Remove="symbols\timer_off.png" />
+    <None Remove="symbols\timer_run.png" />
+    <None Remove="symbols\timer_snooze.png" />
+    <None Remove="symbols\toggle_off.png" />
+    <None Remove="symbols\toggle_on.png" />
+    <None Remove="symbols\trash.png" />
+    <None Remove="symbols\undo.png" />
+    <None Remove="symbols\warning.png" />
+    <None Remove="symbols\zoom_in.png" />
+    <None Remove="symbols\zoom_out.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="symbols\add.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\add_attachment.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\add_image.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\alarm.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\arrow_back.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\arrow_down.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\arrow_down2.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\arrow_down3.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\arrow_drop_down.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\arrow_forward.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\arrow_right.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\arrow_up.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\arrow_up2.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\arrow_up3.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\attach_email.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\attach_file.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\book.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\bookmark.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\bookmarks.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\bookmark_add.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\browser1.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\cancel.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\check.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\check_circle.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\chevron_left.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\chevron_right.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\close.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\contact.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\content_copy.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\content_cut.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\content_paste.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\delete.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\double_arrow_down.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\double_arrow_left.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\double_arrow_right.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\double_arrow_up.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\download.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\draft.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\drafts.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\edit.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\edit2.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\email.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\encrypted.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\encrypted_add.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\envelope.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\error.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\exclamation.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\exclamation2.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\expand_circle.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\explore.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\favorite.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\feedback.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\file_open.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\find.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\folder.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\format_align_center.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\format_align_left.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\format_align_right.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\format_bold.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\format_italic.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\format_size.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\format_underlined.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\group.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\help.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\home.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\image.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\inbox.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\key.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\key_off.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\key_vertical.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\label.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\language.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\library_add.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\link.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\lock.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\lock_open.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\login.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\mail.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\mail_attach.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\mark_as_unread2.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\mark_email_unread.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\menu.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\menu_book.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\mic.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\mic_off.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\minimize.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\more_horiz.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\more_vert.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\music_note.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\music_off.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\notification.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\outbox.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\passkey.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\password.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\password_2.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\people.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\person.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\person_add.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\person_card.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\person_page.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\person_search.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\postoffice.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\question_mark.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\redo.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\refresh.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\remove.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\search.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\searchbox.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\send.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\settings.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\severe_error.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\share.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\sort.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\star.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\sync.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\timelapse.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\timer.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\timer_off.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\timer_run.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\timer_snooze.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\toggle_off.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\toggle_on.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\trash.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\undo.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\warning.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\zoom_in.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="symbols\zoom_out.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Avalonia" Version="11.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="sbdotnet">
+      <HintPath>..\..\libs\sbdotnet.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
