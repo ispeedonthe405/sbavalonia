@@ -1,5 +1,7 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
+﻿using Avalonia.Media;
+using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using sbavalonia.symbols;
 using System.Diagnostics;
 
 namespace DemoTest.ViewModels
@@ -13,6 +15,7 @@ namespace DemoTest.ViewModels
         public void ToggleSymbol()
         {
             SymName = "book";
+            SymbolManager.SymbolColor = Colors.Aquamarine;
         }
 
 

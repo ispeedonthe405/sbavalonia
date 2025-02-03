@@ -52,13 +52,17 @@ namespace sbavalonia.symbols
             foreach (var symbol in Symbols.Values)
             {
                 using ILockedFramebuffer buffer = symbol.Lock();
-                var bytesPerPixel = buffer.Format.BitsPerPixel / sizeof(byte);
+                var bytesPerPixel = 4;// buffer.Format.BitsPerPixel / sizeof(byte);
                 var pixelptr = (byte*)buffer.Address;
                 int pixelCountMax = symbol.PixelSize.Width * symbol.PixelSize.Height;
 
                 for(int pixelCurrent = 0;  pixelCurrent < pixelCountMax; pixelCurrent++)
                 {
-                    var pixel = new Span<byte>(pixelptr + pixelCurrent, bytesPerPixel);
+                    var pixel = new Span<byte>(pixelptr + (pixelCurrent*4), bytesPerPixel);
+
+                    Color currentColor = new Color(pixel[3], pixel[2], pixel[1], pixel[0]);
+                    if (currentColor.A == 0) continue;
+
                     PixelFormat format = buffer.Format;
                     if (format == PixelFormat.Rgb565)
                     {
