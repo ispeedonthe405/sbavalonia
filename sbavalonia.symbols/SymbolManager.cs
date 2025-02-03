@@ -30,12 +30,34 @@ namespace sbavalonia.symbols
         }
         public static Dictionary<string, WriteableBitmap> Symbols { get; private set; } = [];
 
-        public static void Initialize()
+        public static void LoadSymbol(string symbol)
         {
-            BuildSymbols();
+            string prefix = "sbavalonia.symbols.symbols.";
+            string suffix = ".png";
+            string resourceName = $"{prefix}{symbol}{suffix}";
+
+            using (var resource = Assembly.GetExecutingAssembly().GetManifestResourceStream(resourceName))
+            {
+                if(resource is null)
+                {
+                    sbdotnet.Logger.Warning($"Failed to load symbol {symbol}");
+                    return;
+                }
+
+                WriteableBitmap bitmap = WriteableBitmap.Decode(resource);
+                RecolorBitmap(ref bitmap);
+                
+                if (Symbols.Keys.Contains(symbol))
+                {
+                    Symbols.Remove(symbol);
+                }
+                Symbols.Add(symbol, bitmap);
+                
+                OnSymbolColorChanged();
+            }
         }
 
-        private static void BuildSymbols()
+        private static void BuildAllSymbols()
         {
             string prefix = "sbavalonia.symbols.symbols.";
             string suffix = ".png";
@@ -50,6 +72,43 @@ namespace sbavalonia.symbols
                         string key = resource.Replace(prefix, "").Replace(suffix, "");
                         Symbols.Add(key, value);
                     }
+                }
+            }
+        }
+
+        public static unsafe void RecolorBitmap(ref WriteableBitmap bitmap)
+        {
+            using ILockedFramebuffer buffer = bitmap.Lock();
+            var bytesPerPixel = 4;
+            var pixelptr = (byte*)buffer.Address;
+            int pixelCountMax = bitmap.PixelSize.Width * bitmap.PixelSize.Height;
+
+            for (int pixelCurrent = 0; pixelCurrent < pixelCountMax; pixelCurrent++)
+            {
+                var pixel = new Span<byte>(pixelptr + (pixelCurrent * bytesPerPixel), bytesPerPixel);
+
+                PixelFormat format = buffer.Format;
+                if (format == PixelFormat.Rgba8888)
+                {
+                    if (pixel[3] == 0) continue;
+
+                    pixel[0] = _SymbolColor.R;
+                    pixel[1] = _SymbolColor.G;
+                    pixel[2] = _SymbolColor.B;
+                    pixel[3] = _SymbolColor.A;
+                }
+                else if (format == PixelFormat.Bgra8888)
+                {
+                    if (pixel[3] == 0) continue;
+
+                    pixel[0] = _SymbolColor.B;
+                    pixel[1] = _SymbolColor.G;
+                    pixel[2] = _SymbolColor.R;
+                    pixel[3] = _SymbolColor.A;
+                }
+                else
+                {
+                    sbdotnet.Logger.Warning($"PixelFormat {buffer.Format} is not supported");
                 }
             }
         }

@@ -27,6 +27,7 @@ namespace sbavalonia.symbols
         public Symbol() :
             base()
         {
+            SymbolManager.LoadSymbol(SymbolName);
             ApplySourceToSymbol();
             PropertyChanged += Symbol_PropertyChanged;
             SymbolManager.SymbolColorChanged += SymbolManager_SymbolColorChanged;
@@ -42,6 +43,11 @@ namespace sbavalonia.symbols
         {
             if (e.Property.Name.Equals(nameof(SymbolName)))
             {
+                //ApplySourceToSymbol();
+                //SymbolManager.LoadSymbol(SymbolName);
+                //PropertyChanged += Symbol_PropertyChanged;
+                //SymbolManager.SymbolColorChanged += SymbolManager_SymbolColorChanged;
+                SymbolManager.LoadSymbol(SymbolName);
                 ApplySourceToSymbol();
             }
         }
