@@ -1,4 +1,5 @@
-﻿using Avalonia.Media;
+﻿using Avalonia.Interactivity;
+using Avalonia.Media;
 using Avalonia.Media.Imaging;
 using Avalonia.Platform;
 using System.Reflection;
@@ -7,6 +8,13 @@ namespace sbavalonia.symbols
 {
     public static class SymbolManager
     {
+        public static event EventHandler? SymbolColorChanged;
+
+        public static void OnSymbolColorChanged()
+        {
+            SymbolColorChanged?.Invoke(null, EventArgs.Empty);
+        }
+
         private static Color _SymbolColor = Colors.Ivory;
         public static Color SymbolColor
         {
@@ -48,30 +56,22 @@ namespace sbavalonia.symbols
 
         public static unsafe void RecolorSymbols()
         {
-            sbdotnet.Logger.Notify("RecolorSymbols()");
-            foreach (var symbol in Symbols.Values)
+            foreach (var symbol in Symbols)
             {
-                using ILockedFramebuffer buffer = symbol.Lock();
-                var bytesPerPixel = 4;// buffer.Format.BitsPerPixel / sizeof(byte);
+                using ILockedFramebuffer buffer = symbol.Value.Lock();
+                var bytesPerPixel = 4;
                 var pixelptr = (byte*)buffer.Address;
-                int pixelCountMax = symbol.PixelSize.Width * symbol.PixelSize.Height;
+                int pixelCountMax = symbol.Value.PixelSize.Width * symbol.Value.PixelSize.Height;
 
                 for(int pixelCurrent = 0;  pixelCurrent < pixelCountMax; pixelCurrent++)
                 {
-                    var pixel = new Span<byte>(pixelptr + (pixelCurrent*4), bytesPerPixel);
-
-                    Color currentColor = new Color(pixel[3], pixel[2], pixel[1], pixel[0]);
-                    if (currentColor.A == 0) continue;
+                    var pixel = new Span<byte>(pixelptr + (pixelCurrent * bytesPerPixel), bytesPerPixel);
 
                     PixelFormat format = buffer.Format;
-                    if (format == PixelFormat.Rgb565)
+                    if(format == PixelFormat.Rgba8888)
                     {
-                        var value = (((_SymbolColor.R & 0b11111000) << 8) + ((_SymbolColor.G & 0b11111100) << 3) + (_SymbolColor.B >> 3));
-                        pixel[0] = (byte)value;
-                        pixel[1] = (byte)(value >> 8);
-                    }
-                    else if(format == PixelFormat.Rgba8888)
-                    {
+                        if (pixel[3] == 0) continue;
+
                         pixel[0] = _SymbolColor.R;
                         pixel[1] = _SymbolColor.G;
                         pixel[2] = _SymbolColor.B;
@@ -79,6 +79,8 @@ namespace sbavalonia.symbols
                     }
                     else if(format == PixelFormat.Bgra8888)
                     {
+                        if (pixel[3] == 0) continue;
+
                         pixel[0] = _SymbolColor.B;
                         pixel[1] = _SymbolColor.G;
                         pixel[2] = _SymbolColor.R;
@@ -86,10 +88,11 @@ namespace sbavalonia.symbols
                     }
                     else
                     {
-                        sbdotnet.Logger.Warning($"PixelFormat={buffer.Format}");
+                        sbdotnet.Logger.Warning($"PixelFormat {buffer.Format} is not supported");
                     }
                 }
             }
+            OnSymbolColorChanged();
         }
     }
 }

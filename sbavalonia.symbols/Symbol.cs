@@ -20,7 +20,6 @@ namespace sbavalonia.symbols
             set
             {
                 SetAndRaise(SymbolNameProperty, ref _SymbolName, value);
-                ApplySourceToSymbol();
             }
         }
 
@@ -29,6 +28,22 @@ namespace sbavalonia.symbols
             base()
         {
             ApplySourceToSymbol();
+            PropertyChanged += Symbol_PropertyChanged;
+            SymbolManager.SymbolColorChanged += SymbolManager_SymbolColorChanged;
+        }
+
+        private void SymbolManager_SymbolColorChanged(object? sender, EventArgs e)
+        {
+            sbdotnet.Logger.Notify("SymbolManager_SymbolColorChanged");
+            ApplySourceToSymbol();
+        }
+
+        private void Symbol_PropertyChanged(object? sender, AvaloniaPropertyChangedEventArgs e)
+        {
+            if (e.Property.Name.Equals(nameof(SymbolName)))
+            {
+                ApplySourceToSymbol();
+            }
         }
 
         public void ApplySourceToSymbol()
@@ -37,6 +52,9 @@ namespace sbavalonia.symbols
             if(bitmap is not null)
             {
                 Source = bitmap;
+
+                // In WPF this isn't necessary but it is here in Avalonia
+                InvalidateVisual();
             }
         }
 	}
