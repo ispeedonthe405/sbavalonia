@@ -14,10 +14,10 @@
         <vm:MainWindowViewModel/>
     </Design.DataContext>
 
-	<StackPanel Orientation="Horizontal">
-		<sym:Symbol SymbolName="add" Width="32" Height="32"/>
-		<sym:Symbol SymbolName="arrow_up" Width="32" Height="32"/>
-		<sym:Symbol SymbolName="close" Width="32" Height="32"/>
+	<StackPanel Orientation="Horizontal" VerticalAlignment="Top">
+		<sym:Symbol SymbolName="add" OverrideColor="Blue"/>
+		<sym:Symbol SymbolName="arrow_up" OverrideColor="Green"/>
+		<sym:Symbol SymbolName="close"/>
 		<Button Width="100" Height="30" Command="{Binding ToggleSymbolCommand}">
 			<Button.Content>
 				<StackPanel Orientation="Horizontal">

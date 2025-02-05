@@ -14,7 +14,6 @@ namespace DemoTest.ViewModels
         [RelayCommand]
         public void ToggleSymbol()
         {
-            SymName = "book";
             SymbolManager.SymbolColor = Colors.Aquamarine;
         }
 
