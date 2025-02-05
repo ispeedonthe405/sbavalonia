@@ -76,12 +76,21 @@ namespace sbavalonia.symbols
             }
         }
 
-        public static unsafe void RecolorBitmap(ref WriteableBitmap bitmap)
+        public static void OverrideSymbolColor(string symbolName, Color color)
+        {
+            if (Symbols.TryGetValue(symbolName, out WriteableBitmap? bitmap))
+            {
+                RecolorBitmap(ref bitmap, color);
+            }
+        }
+
+        public static unsafe void RecolorBitmap(ref WriteableBitmap bitmap, Color? color = null)
         {
             using ILockedFramebuffer buffer = bitmap.Lock();
             var bytesPerPixel = 4;
             var pixelptr = (byte*)buffer.Address;
             int pixelCountMax = bitmap.PixelSize.Width * bitmap.PixelSize.Height;
+            Color newColor = color is null ? SymbolColor : color.Value;
 
             for (int pixelCurrent = 0; pixelCurrent < pixelCountMax; pixelCurrent++)
             {
@@ -92,19 +101,19 @@ namespace sbavalonia.symbols
                 {
                     if (pixel[3] == 0) continue;
 
-                    pixel[0] = _SymbolColor.R;
-                    pixel[1] = _SymbolColor.G;
-                    pixel[2] = _SymbolColor.B;
-                    pixel[3] = _SymbolColor.A;
+                    pixel[0] = newColor.R;
+                    pixel[1] = newColor.G;
+                    pixel[2] = newColor.B;
+                    pixel[3] = newColor.A;
                 }
                 else if (format == PixelFormat.Bgra8888)
                 {
                     if (pixel[3] == 0) continue;
 
-                    pixel[0] = _SymbolColor.B;
-                    pixel[1] = _SymbolColor.G;
-                    pixel[2] = _SymbolColor.R;
-                    pixel[3] = _SymbolColor.A;
+                    pixel[0] = newColor.B;
+                    pixel[1] = newColor.G;
+                    pixel[2] = newColor.R;
+                    pixel[3] = newColor.A;
                 }
                 else
                 {

@@ -1,6 +1,8 @@
 ﻿using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Media;
 using Avalonia.Media.Imaging;
+
 
 namespace sbavalonia.symbols
 {
@@ -10,6 +12,7 @@ namespace sbavalonia.symbols
         #region Fields
 
         private string _SymbolName = string.Empty;
+        private Color _OverrideColor = Colors.Transparent;
 
         #endregion Fields
         /////////////////////////////////////////////////////////
@@ -34,6 +37,21 @@ namespace sbavalonia.symbols
             }
         }
 
+        public static readonly DirectProperty<Symbol, Color> OverrideColorProperty =
+            AvaloniaProperty.RegisterDirect<Symbol, Color>(
+                nameof(OverrideColor),
+                o => o.OverrideColor,
+                (o, v) => { o.OverrideColor = v; });
+
+        public Color OverrideColor
+        {
+            get => _OverrideColor;
+            set
+            {
+                SetAndRaise(OverrideColorProperty, ref _OverrideColor, value);
+            }
+        }
+
         #endregion Properties
         /////////////////////////////////////////////////////////
 
@@ -45,6 +63,9 @@ namespace sbavalonia.symbols
         public Symbol() :
             base()
         {
+            // defaults
+            Width = 24; Height = 24;
+
             SymbolManager.LoadSymbol(SymbolName);
             ApplySourceToSymbol();
             PropertyChanged += Symbol_PropertyChanged;
@@ -56,6 +77,11 @@ namespace sbavalonia.symbols
             SymbolManager.Symbols.TryGetValue(SymbolName, out WriteableBitmap? bitmap);
             if (bitmap is not null)
             {
+                if (OverrideColor != Colors.Transparent)
+                {
+                    SymbolManager.RecolorBitmap(ref bitmap, OverrideColor);
+                }
+                
                 Source = bitmap;
 
                 // In WPF this isn't necessary but it seems it is here in Avalonia
@@ -81,6 +107,11 @@ namespace sbavalonia.symbols
             if (e.Property.Name.Equals(nameof(SymbolName)))
             {
                 SymbolManager.LoadSymbol(SymbolName);
+                ApplySourceToSymbol();
+            }
+
+            else if (e.Property.Name.Equals(nameof(OverrideColor)))
+            {
                 ApplySourceToSymbol();
             }
         }
