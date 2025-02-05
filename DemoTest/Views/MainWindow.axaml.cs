@@ -10,9 +10,6 @@ namespace DemoTest.Views
         {
             InitializeComponent();
             SymbolManager.SymbolColor = Colors.Orange;
-            sym.ApplySourceToSymbol();
-            sym.SymbolName = "add";
-            sym.ApplySourceToSymbol();
         }
     }
 }

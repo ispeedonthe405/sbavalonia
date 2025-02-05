@@ -16,7 +16,7 @@
 
 	<StackPanel Orientation="Horizontal" VerticalAlignment="Top">
 		<sym:Symbol SymbolName="add" OverrideColor="Blue"/>
-		<sym:Symbol SymbolName="arrow_up" OverrideColor="Green"/>
+		<sym:Symbol SymbolName="arrow_up"/>
 		<sym:Symbol SymbolName="close"/>
 		<Button Width="100" Height="30" Command="{Binding ToggleSymbolCommand}">
 			<Button.Content>
