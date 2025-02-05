@@ -2,6 +2,9 @@
 using Avalonia.Controls;
 using Avalonia.Media;
 using Avalonia.Media.Imaging;
+using Avalonia.Platform;
+using sbdotnet;
+using System.Reflection;
 
 
 namespace sbavalonia.symbols
@@ -66,27 +69,8 @@ namespace sbavalonia.symbols
             // defaults
             Width = 24; Height = 24;
 
-            SymbolManager.LoadSymbol(SymbolName);
-            ApplySourceToSymbol();
             PropertyChanged += Symbol_PropertyChanged;
             SymbolManager.SymbolColorChanged += SymbolManager_SymbolColorChanged;
-        }
-
-        public void ApplySourceToSymbol()
-        {
-            SymbolManager.Symbols.TryGetValue(SymbolName, out WriteableBitmap? bitmap);
-            if (bitmap is not null)
-            {
-                if (OverrideColor != Colors.Transparent)
-                {
-                    SymbolManager.RecolorBitmap(ref bitmap, OverrideColor);
-                }
-                
-                Source = bitmap;
-
-                // In WPF this isn't necessary but it seems it is here in Avalonia
-                InvalidateVisual();
-            }
         }
 
         #endregion Interface
@@ -99,24 +83,98 @@ namespace sbavalonia.symbols
 
         private void SymbolManager_SymbolColorChanged(object? sender, EventArgs e)
         {
-            ApplySourceToSymbol();
+            if (!SymbolName.IsNull())
+            {
+                LoadSymbol();
+            }            
         }
 
         private void Symbol_PropertyChanged(object? sender, AvaloniaPropertyChangedEventArgs e)
         {
             if (e.Property.Name.Equals(nameof(SymbolName)))
             {
-                SymbolManager.LoadSymbol(SymbolName);
-                ApplySourceToSymbol();
+                LoadSymbol();
             }
 
             else if (e.Property.Name.Equals(nameof(OverrideColor)))
             {
-                ApplySourceToSymbol();
+                LoadSymbol();
             }
+        }
+
+        private void LoadSymbol()
+        {
+            try
+            {
+                string prefix = "sbavalonia.symbols.symbols.";
+                string suffix = ".png";
+                string resourceName = $"{prefix}{SymbolName}{suffix}";
+
+                using (var resource = Assembly.GetExecutingAssembly().GetManifestResourceStream(resourceName))
+                {
+                    if (resource is null)
+                    {
+                        sbdotnet.Logger.Warning($"Failed to load symbol {SymbolName}");
+                        return;
+                    }
+
+                    WriteableBitmap bitmap = WriteableBitmap.Decode(resource);
+                    RecolorBitmap(bitmap);
+                    Source = bitmap;
+                }
+            }
+            catch (Exception ex)
+            {
+                sbdotnet.Logger.Error(ex);
+            }
+        }
+
+        private unsafe void RecolorBitmap(WriteableBitmap bitmap)
+        {
+            try
+            {
+                using ILockedFramebuffer buffer = bitmap.Lock();
+                var bytesPerPixel = 4;
+                var pixelptr = (byte*)buffer.Address;
+                int pixelCountMax = bitmap.PixelSize.Width * bitmap.PixelSize.Height;
+                Color newColor = OverrideColor != Colors.Transparent ? OverrideColor : SymbolManager.SymbolColor;
+
+                for (int pixelCurrent = 0; pixelCurrent < pixelCountMax; pixelCurrent++)
+                {
+                    var pixel = new Span<byte>(pixelptr + (pixelCurrent * bytesPerPixel), bytesPerPixel);
+
+                    PixelFormat format = buffer.Format;
+                    if (format == PixelFormat.Rgba8888)
+                    {
+                        if (pixel[3] == 0) continue;
+
+                        pixel[0] = newColor.R;
+                        pixel[1] = newColor.G;
+                        pixel[2] = newColor.B;
+                        pixel[3] = newColor.A;
+                    }
+                    else if (format == PixelFormat.Bgra8888)
+                    {
+                        if (pixel[3] == 0) continue;
+
+                        pixel[0] = newColor.B;
+                        pixel[1] = newColor.G;
+                        pixel[2] = newColor.R;
+                        pixel[3] = newColor.A;
+                    }
+                    else
+                    {
+                        sbdotnet.Logger.Warning($"PixelFormat {buffer.Format} is not supported");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                sbdotnet.Logger.Error(ex);
+            }            
         }
 
         #endregion Internal
         /////////////////////////////////////////////////////////        
-	}
+    }
 }
