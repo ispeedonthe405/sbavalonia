@@ -32,6 +32,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\sbavalonia.symbols\sbavalonia.symbols.csproj" />
+    <ProjectReference Include="..\sbavalonia.themer\sbavalonia.themer.csproj" />
   </ItemGroup>
 
   <ItemGroup>
