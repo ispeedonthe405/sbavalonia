@@ -118,6 +118,7 @@
     <None Remove="symbols\redo.png" />
     <None Remove="symbols\refresh.png" />
     <None Remove="symbols\remove.png" />
+    <None Remove="symbols\scan.png" />
     <None Remove="symbols\search.png" />
     <None Remove="symbols\searchbox.png" />
     <None Remove="symbols\send.png" />
@@ -460,6 +461,7 @@
     <EmbeddedResource Include="symbols\remove.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="symbols\scan.png" />
     <EmbeddedResource Include="symbols\search.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
@@ -530,6 +532,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Reference Include="sbavalonia.media">
+      <HintPath>..\..\libs\sbavalonia.media.dll</HintPath>
+    </Reference>
     <Reference Include="sbdotnet">
       <HintPath>..\..\libs\sbdotnet.dll</HintPath>
     </Reference>
