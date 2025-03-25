@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
 		xmlns:sym="using:sbavalonia.symbols"
+		xmlns:ctl="using:sbavalonia.controls"
         x:Class="DemoTest.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
         Icon="/Assets/avalonia-logo.ico"
@@ -26,6 +27,7 @@
 				</StackPanel>
 			</Button.Content>
 		</Button>
+		<ctl:OverlayTextBox OverlaySymbol="$" Text="I am text" OverlaySymbolColor="Orange" TextColor="Green"/>
 	</StackPanel>
 
 </Window>

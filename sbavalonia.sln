@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sbavalonia.themer", "sbaval
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sbavalonia.media", "sbavalonia.media\sbavalonia.media.csproj", "{77539266-3703-4B6B-8490-D0BB41B7A00E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sbavalonia.controls", "sbavalonia.controls\sbavalonia.controls.csproj", "{7A483E04-D8D2-4C9C-BE05-C676685699EF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{77539266-3703-4B6B-8490-D0BB41B7A00E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{77539266-3703-4B6B-8490-D0BB41B7A00E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{77539266-3703-4B6B-8490-D0BB41B7A00E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A483E04-D8D2-4C9C-BE05-C676685699EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A483E04-D8D2-4C9C-BE05-C676685699EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A483E04-D8D2-4C9C-BE05-C676685699EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A483E04-D8D2-4C9C-BE05-C676685699EF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

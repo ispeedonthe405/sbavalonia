@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework>net9.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
@@ -26,6 +26,7 @@
     <None Remove="symbols\arrow_up.png" />
     <None Remove="symbols\arrow_up2.png" />
     <None Remove="symbols\arrow_up3.png" />
+    <None Remove="symbols\article.png" />
     <None Remove="symbols\attach_email.png" />
     <None Remove="symbols\attach_file.png" />
     <None Remove="symbols\book.png" />
@@ -39,6 +40,7 @@
     <None Remove="symbols\chevron_left.png" />
     <None Remove="symbols\chevron_right.png" />
     <None Remove="symbols\close.png" />
+    <None Remove="symbols\cloud.png" />
     <None Remove="symbols\contact.png" />
     <None Remove="symbols\content_copy.png" />
     <None Remove="symbols\content_cut.png" />
@@ -103,6 +105,7 @@
     <None Remove="symbols\music_note.png" />
     <None Remove="symbols\music_off.png" />
     <None Remove="symbols\notification.png" />
+    <None Remove="symbols\orbit.png" />
     <None Remove="symbols\outbox.png" />
     <None Remove="symbols\passkey.png" />
     <None Remove="symbols\password.png" />
@@ -128,6 +131,7 @@
     <None Remove="symbols\sort.png" />
     <None Remove="symbols\star.png" />
     <None Remove="symbols\sync.png" />
+    <None Remove="symbols\table.png" />
     <None Remove="symbols\timelapse.png" />
     <None Remove="symbols\timer.png" />
     <None Remove="symbols\timer_off.png" />
@@ -185,6 +189,7 @@
     <EmbeddedResource Include="symbols\arrow_up3.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="symbols\article.png" />
     <EmbeddedResource Include="symbols\attach_email.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
@@ -224,6 +229,7 @@
     <EmbeddedResource Include="symbols\close.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="symbols\cloud.png" />
     <EmbeddedResource Include="symbols\contact.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
@@ -416,6 +422,7 @@
     <EmbeddedResource Include="symbols\notification.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="symbols\orbit.png" />
     <EmbeddedResource Include="symbols\outbox.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
@@ -489,6 +496,7 @@
     <EmbeddedResource Include="symbols\sync.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="symbols\table.png" />
     <EmbeddedResource Include="symbols\timelapse.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
@@ -528,7 +536,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Avalonia" Version="11.2.3" />
+    <PackageReference Include="Avalonia" Version="11.2.5" />
   </ItemGroup>
 
   <ItemGroup>
