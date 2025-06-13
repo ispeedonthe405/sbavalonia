@@ -16,6 +16,7 @@ namespace DemoTest
         {
             sbdotnet.Logger.UseTrace = true;
             AvaloniaXamlLoader.Load(this);
+            SymbolManager.Integrate(this);
         }
 
         public override void OnFrameworkInitializationCompleted()

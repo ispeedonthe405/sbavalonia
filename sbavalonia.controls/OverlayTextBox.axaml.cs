@@ -20,28 +20,32 @@ public partial class OverlayTextBox : UserControl
     /////////////////////////////////////////////////////////
     #region Properties
 
-    public static readonly StyledProperty<string> TextProperty =
-        AvaloniaProperty.Register<OverlayTextBox, string>(nameof(Text), string.Empty);
+    public static readonly StyledProperty<string?> TextProperty =
+        AvaloniaProperty.Register<OverlayTextBox, string?>(nameof(Text), string.Empty);
 
-    public static readonly StyledProperty<Color> TextColorProperty =
-        AvaloniaProperty.Register<OverlayTextBox, Color>(nameof(TextColor), Colors.Black);
+    public static readonly StyledProperty<IBrush> TextColorProperty =
+        AvaloniaProperty.Register<OverlayTextBox, IBrush>(nameof(TextColor), new SolidColorBrush(Colors.Black));
 
     public static readonly StyledProperty<string> OverlaySymbolProperty =
         AvaloniaProperty.Register<OverlayTextBox, string>(nameof(OverlaySymbol), "$");
 
-    public static readonly StyledProperty<Color> OverlaySymbolColorProperty =
-        AvaloniaProperty.Register<OverlayTextBox, Color>(nameof(OverlaySymbolColor), Colors.Black);
+    public static readonly StyledProperty<IBrush> OverlaySymbolColorProperty =
+        AvaloniaProperty.Register<OverlayTextBox, IBrush>(nameof(OverlaySymbolColor), new SolidColorBrush(Colors.Black));
 
     public static readonly StyledProperty<bool> IsNumericProperty =
         AvaloniaProperty.Register<OverlayTextBox, bool>(nameof(IsNumeric), false);
 
-    public string Text
+    public string? Text
     {
-        get => GetValue(TextProperty);
-        set => SetValue(TextProperty, value);
+        get => tb.Text;
+        set
+        {
+            SetValue(TextProperty, value);
+            tb.Text = value;
+        }
     }
 
-    public Color TextColor
+    public IBrush TextColor
     {
         get => GetValue(TextColorProperty);
         set => SetValue(TextColorProperty, value);
@@ -53,7 +57,7 @@ public partial class OverlayTextBox : UserControl
         set => SetValue(OverlaySymbolProperty, value);
     }
 
-    public Color OverlaySymbolColor
+    public IBrush OverlaySymbolColor
     {
         get => GetValue(OverlaySymbolColorProperty);
         set => SetValue(OverlaySymbolColorProperty, value);
@@ -122,6 +126,12 @@ public partial class OverlayTextBox : UserControl
         NumberKeys.Add(Key.NumPad7, true);
         NumberKeys.Add(Key.NumPad8, true);
         NumberKeys.Add(Key.NumPad9, true);
+
+        NumberKeys.Add(Key.OemPeriod, true);
+        NumberKeys.Add(Key.Decimal, true);
+
+        NumberKeys.Add(Key.Return, true);
+        NumberKeys.Add(Key.Back, true);
     }
 
     #endregion Internal Affairs

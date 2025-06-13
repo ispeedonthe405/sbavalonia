@@ -16,6 +16,7 @@
     <None Remove="symbols\add_attachment.png" />
     <None Remove="symbols\add_image.png" />
     <None Remove="symbols\alarm.png" />
+    <None Remove="symbols\apartment.png" />
     <None Remove="symbols\arrow_back.png" />
     <None Remove="symbols\arrow_down.png" />
     <None Remove="symbols\arrow_down2.png" />
@@ -39,6 +40,7 @@
     <None Remove="symbols\check_circle.png" />
     <None Remove="symbols\chevron_left.png" />
     <None Remove="symbols\chevron_right.png" />
+    <None Remove="symbols\city.png" />
     <None Remove="symbols\close.png" />
     <None Remove="symbols\cloud.png" />
     <None Remove="symbols\contact.png" />
@@ -104,6 +106,7 @@
     <None Remove="symbols\more_vert.png" />
     <None Remove="symbols\music_note.png" />
     <None Remove="symbols\music_off.png" />
+    <None Remove="symbols\newsmode.png" />
     <None Remove="symbols\notification.png" />
     <None Remove="symbols\orbit.png" />
     <None Remove="symbols\outbox.png" />
@@ -132,6 +135,7 @@
     <None Remove="symbols\star.png" />
     <None Remove="symbols\sync.png" />
     <None Remove="symbols\table.png" />
+    <None Remove="symbols\table_rows_narrow.png" />
     <None Remove="symbols\timelapse.png" />
     <None Remove="symbols\timer.png" />
     <None Remove="symbols\timer_off.png" />
@@ -140,6 +144,7 @@
     <None Remove="symbols\toggle_off.png" />
     <None Remove="symbols\toggle_on.png" />
     <None Remove="symbols\trash.png" />
+    <None Remove="symbols\two_page.png" />
     <None Remove="symbols\undo.png" />
     <None Remove="symbols\warning.png" />
     <None Remove="symbols\zoom_in.png" />
@@ -159,6 +164,7 @@
     <EmbeddedResource Include="symbols\alarm.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="symbols\apartment.png" />
     <EmbeddedResource Include="symbols\arrow_back.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
@@ -226,6 +232,7 @@
     <EmbeddedResource Include="symbols\chevron_right.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="symbols\city.png" />
     <EmbeddedResource Include="symbols\close.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
@@ -419,6 +426,7 @@
     <EmbeddedResource Include="symbols\music_off.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="symbols\newsmode.png" />
     <EmbeddedResource Include="symbols\notification.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
@@ -497,6 +505,7 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="symbols\table.png" />
+    <EmbeddedResource Include="symbols\table_rows_narrow.png" />
     <EmbeddedResource Include="symbols\timelapse.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
@@ -521,6 +530,7 @@
     <EmbeddedResource Include="symbols\trash.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="symbols\two_page.png" />
     <EmbeddedResource Include="symbols\undo.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
@@ -536,7 +546,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Avalonia" Version="11.2.5" />
+    <PackageReference Include="Avalonia" Version="11.3.1" />
   </ItemGroup>
 
   <ItemGroup>

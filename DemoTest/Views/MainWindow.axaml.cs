@@ -9,7 +9,6 @@ namespace DemoTest.Views
         public MainWindow()
         {
             InitializeComponent();
-            SymbolManager.SymbolColor = Colors.Orange;
         }
     }
 }

@@ -10,10 +10,10 @@
 		
 		<TextBlock Text="{Binding OverlaySymbol}"
 				   VerticalAlignment="Center" Margin="3,0,0,0"
-			   Background="Transparent" Foreground="{Binding OverlaySymbolColor}"/>
+				   Background="Transparent"/>
 		
 		<TextBox x:Name="tb" VerticalAlignment="Center" Margin="0" Padding="12,7,3,0"
-				 Text="{Binding Text}" Foreground="{Binding TextColor}"/>
+				 Text="{Binding Text}"/>
 
 	</Grid>
 	
