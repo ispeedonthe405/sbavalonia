@@ -33,11 +33,18 @@ namespace sbavalonia.symbols
         {
             _App = app;
             _App.ActualThemeVariantChanged += App_ActualThemeVariantChanged;
+
+            UpdateColor();
         }
 
         private static void App_ActualThemeVariantChanged(object? sender, EventArgs e)
         {
-            if(_App!.ActualThemeVariant.Equals(Avalonia.Styling.ThemeVariant.Light))
+            UpdateColor();
+        }
+
+        private static void UpdateColor()
+        {
+            if (_App!.ActualThemeVariant.Equals(Avalonia.Styling.ThemeVariant.Light))
             {
                 SymbolColor = _Symbol_Dark;
             }
