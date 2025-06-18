@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sbavalonia.symbols", "sbava
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoTest", "DemoTest\DemoTest.csproj", "{1D1596A6-DA15-4882-8C57-2DFA1BAC0C51}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sbavalonia.themer", "sbavalonia.themer\sbavalonia.themer.csproj", "{805355C5-EC75-4363-BC32-EBC418F3D0FC}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sbavalonia.media", "sbavalonia.media\sbavalonia.media.csproj", "{77539266-3703-4B6B-8490-D0BB41B7A00E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sbavalonia.controls", "sbavalonia.controls\sbavalonia.controls.csproj", "{7A483E04-D8D2-4C9C-BE05-C676685699EF}"
@@ -27,10 +25,6 @@ Global
 		{1D1596A6-DA15-4882-8C57-2DFA1BAC0C51}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D1596A6-DA15-4882-8C57-2DFA1BAC0C51}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1D1596A6-DA15-4882-8C57-2DFA1BAC0C51}.Release|Any CPU.Build.0 = Release|Any CPU
-		{805355C5-EC75-4363-BC32-EBC418F3D0FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{805355C5-EC75-4363-BC32-EBC418F3D0FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{805355C5-EC75-4363-BC32-EBC418F3D0FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{805355C5-EC75-4363-BC32-EBC418F3D0FC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{77539266-3703-4B6B-8490-D0BB41B7A00E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{77539266-3703-4B6B-8490-D0BB41B7A00E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{77539266-3703-4B6B-8490-D0BB41B7A00E}.Release|Any CPU.ActiveCfg = Release|Any CPU
