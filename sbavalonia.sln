@@ -6,6 +6,11 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sbavalonia.symbols", "sbavalonia.symbols\sbavalonia.symbols.csproj", "{7CF29459-FC0C-48CE-910D-8C5D35123DF3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoTest", "DemoTest\DemoTest.csproj", "{1D1596A6-DA15-4882-8C57-2DFA1BAC0C51}"
+	ProjectSection(ProjectDependencies) = postProject
+		{77539266-3703-4B6B-8490-D0BB41B7A00E} = {77539266-3703-4B6B-8490-D0BB41B7A00E}
+		{7A483E04-D8D2-4C9C-BE05-C676685699EF} = {7A483E04-D8D2-4C9C-BE05-C676685699EF}
+		{7CF29459-FC0C-48CE-910D-8C5D35123DF3} = {7CF29459-FC0C-48CE-910D-8C5D35123DF3}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sbavalonia.media", "sbavalonia.media\sbavalonia.media.csproj", "{77539266-3703-4B6B-8490-D0BB41B7A00E}"
 EndProject
@@ -36,5 +41,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8E5D5E40-2482-4DA6-A849-892F3A1E3D19}
 	EndGlobalSection
 EndGlobal
