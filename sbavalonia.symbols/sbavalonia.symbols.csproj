@@ -28,8 +28,12 @@
     <None Remove="symbols\arrow_up2.png" />
     <None Remove="symbols\arrow_up3.png" />
     <None Remove="symbols\article.png" />
+    <None Remove="symbols\article_person.png" />
+    <None Remove="symbols\assignment.png" />
     <None Remove="symbols\attach_email.png" />
     <None Remove="symbols\attach_file.png" />
+    <None Remove="symbols\attach_money.png" />
+    <None Remove="symbols\bar_chart.png" />
     <None Remove="symbols\book.png" />
     <None Remove="symbols\bookmark.png" />
     <None Remove="symbols\bookmarks.png" />
@@ -48,6 +52,7 @@
     <None Remove="symbols\content_cut.png" />
     <None Remove="symbols\content_paste.png" />
     <None Remove="symbols\delete.png" />
+    <None Remove="symbols\docs.png" />
     <None Remove="symbols\double_arrow_down.png" />
     <None Remove="symbols\double_arrow_left.png" />
     <None Remove="symbols\double_arrow_right.png" />
@@ -62,14 +67,18 @@
     <None Remove="symbols\encrypted_add.png" />
     <None Remove="symbols\envelope.png" />
     <None Remove="symbols\error.png" />
+    <None Remove="symbols\event_note.png" />
     <None Remove="symbols\exclamation.png" />
     <None Remove="symbols\exclamation2.png" />
     <None Remove="symbols\expand_circle.png" />
     <None Remove="symbols\explore.png" />
+    <None Remove="symbols\export_notes.png" />
     <None Remove="symbols\favorite.png" />
     <None Remove="symbols\feedback.png" />
+    <None Remove="symbols\file_export.png" />
     <None Remove="symbols\file_open.png" />
     <None Remove="symbols\find.png" />
+    <None Remove="symbols\fluid_med.png" />
     <None Remove="symbols\folder.png" />
     <None Remove="symbols\format_align_center.png" />
     <None Remove="symbols\format_align_left.png" />
@@ -79,6 +88,8 @@
     <None Remove="symbols\format_size.png" />
     <None Remove="symbols\format_underlined.png" />
     <None Remove="symbols\group.png" />
+    <None Remove="symbols\healing.png" />
+    <None Remove="symbols\health_and_safety.png" />
     <None Remove="symbols\help.png" />
     <None Remove="symbols\home.png" />
     <None Remove="symbols\image.png" />
@@ -120,6 +131,7 @@
     <None Remove="symbols\person_page.png" />
     <None Remove="symbols\person_search.png" />
     <None Remove="symbols\postoffice.png" />
+    <None Remove="symbols\prescriptions.png" />
     <None Remove="symbols\question_mark.png" />
     <None Remove="symbols\redo.png" />
     <None Remove="symbols\refresh.png" />
@@ -146,6 +158,7 @@
     <None Remove="symbols\trash.png" />
     <None Remove="symbols\two_page.png" />
     <None Remove="symbols\undo.png" />
+    <None Remove="symbols\view_timeline.png" />
     <None Remove="symbols\warning.png" />
     <None Remove="symbols\zoom_in.png" />
     <None Remove="symbols\zoom_out.png" />
@@ -196,12 +209,16 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="symbols\article.png" />
+    <EmbeddedResource Include="symbols\article_person.png" />
+    <EmbeddedResource Include="symbols\assignment.png" />
     <EmbeddedResource Include="symbols\attach_email.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="symbols\attach_file.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="symbols\attach_money.png" />
+    <EmbeddedResource Include="symbols\bar_chart.png" />
     <EmbeddedResource Include="symbols\book.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
@@ -252,6 +269,7 @@
     <EmbeddedResource Include="symbols\delete.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="symbols\docs.png" />
     <EmbeddedResource Include="symbols\double_arrow_down.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
@@ -294,6 +312,7 @@
     <EmbeddedResource Include="symbols\error.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="symbols\event_note.png" />
     <EmbeddedResource Include="symbols\exclamation.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
@@ -306,18 +325,21 @@
     <EmbeddedResource Include="symbols\explore.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="symbols\export_notes.png" />
     <EmbeddedResource Include="symbols\favorite.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="symbols\feedback.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="symbols\file_export.png" />
     <EmbeddedResource Include="symbols\file_open.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="symbols\find.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="symbols\fluid_med.png" />
     <EmbeddedResource Include="symbols\folder.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
@@ -345,6 +367,8 @@
     <EmbeddedResource Include="symbols\group.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="symbols\healing.png" />
+    <EmbeddedResource Include="symbols\health_and_safety.png" />
     <EmbeddedResource Include="symbols\help.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
@@ -464,6 +488,7 @@
     <EmbeddedResource Include="symbols\postoffice.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="symbols\prescriptions.png" />
     <EmbeddedResource Include="symbols\question_mark.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
@@ -534,6 +559,7 @@
     <EmbeddedResource Include="symbols\undo.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="symbols\view_timeline.png" />
     <EmbeddedResource Include="symbols\warning.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
