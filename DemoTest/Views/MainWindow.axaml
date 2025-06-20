@@ -15,40 +15,46 @@
         <vm:MainWindowViewModel/>
     </Design.DataContext>
 
-	<Grid>
+	<Grid Margin="20">
 		
 		<Grid.RowDefinitions>
 			<RowDefinition Height="40"/>
 			<RowDefinition Height="40"/>
 			<RowDefinition Height="40"/>
+			<RowDefinition Height="40"/>
 			<RowDefinition/>
 		</Grid.RowDefinitions>
-		
-		<ComboBox Grid.Row="0"
-				  ItemsSource="{Binding Themes}"
-				  SelectedItem="{Binding SelectedTheme}"/>
+
+		<StackPanel Grid.Row="0" Orientation="Horizontal" Spacing="10">
+			<TextBlock VerticalAlignment="Center" Text="Active Theme:"/>
+			<ComboBox Grid.Row="0"
+					  VerticalAlignment="Center"
+					  ItemsSource="{Binding Themes}"
+					  SelectedItem="{Binding SelectedTheme}"/>
+		</StackPanel>
 		
 		<StackPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Top">
-			<Border Width="100" Background="{DynamicResource MenuFlyoutItemForeground}"/>
-			<sym:Symbol SymbolName="add" OverrideColor="Blue"/>
+			<!--<Border Width="100" Background="{DynamicResource MenuFlyoutItemForeground}"/>-->
+			<sym:Symbol SymbolName="add" OverrideColor="Orange"/>
 			<sym:Symbol SymbolName="arrow_up" OverrideColor="{DynamicResource TextFillColorPrimary}"/>
 			<sym:Symbol SymbolName="close"/>
-			<Button Width="100" Height="30" Command="{Binding ToggleSymbolCommand}">
+			<Button Height="30" Command="{Binding ToggleSymbolCommand}">
 				<Button.Content>
 					<StackPanel Orientation="Horizontal">
 						<sym:Symbol x:Name="sym" SymbolName="{Binding SymName}" Width="24" Height="24" VerticalAlignment="Center"/>
-						<TextBlock Text="button" Margin="5,0,0,0" VerticalAlignment="Center"/>
+						<TextBlock Text="Toggle Symbol Colors" Margin="5,0,0,0" VerticalAlignment="Center"/>
 					</StackPanel>
 				</Button.Content>
 			</Button>
-			<!--<ctl:OverlayTextBox x:Name="ReferenceControl" OverlaySymbol="$" IsNumeric="True" Width="200"
-								Text="{Binding NumValue}"/>-->
-			<TextBlock Text="$" VerticalAlignment="Center" Margin="0,0,0,0" ZIndex="99"/>
-			<ctl:NumericBox IsDecimal="True" OverlaySymbol="%" Width="200" Text="{Binding NumValue}"/>
 		</StackPanel>
+
+		<ctl:OverlayTextBox Grid.Row="2"
+							Width="200"
+							HorizontalAlignment="Left"
+							IsNumeric="True"
+							Text="{Binding BoundInt}"/>
 		
-		<ctl:NumericBox Grid.Row="2" VerticalAlignment="Center" Text="{Binding NumValue}" Padding="12,6,0,0"/>
-		<TextBlock Grid.Row="2" Text="$" VerticalAlignment="Center" Margin="2,-1,0,0"/>
+		<TextBlock Grid.Row="3" Text="{Binding BoundInt}"/>
 		
 	</Grid>
 </Window>

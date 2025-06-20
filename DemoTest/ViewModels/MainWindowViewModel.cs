@@ -31,8 +31,15 @@ namespace DemoTest.ViewModels
         [RelayCommand]
         public void ToggleSymbol()
         {
-            //SymbolManager.SymbolColor = Colors.Aquamarine;
+            SymbolManager.LightThemeColor = Colors.Purple;
+            SymbolManager.DarkThemeColor = Colors.LightGreen;
         }
+
+        [ObservableProperty]
+        string _BoundText = "I am bound text. FEAR ME!";
+
+        [ObservableProperty]
+        int _BoundInt = 12345;
 
 
         public MainWindowViewModel()

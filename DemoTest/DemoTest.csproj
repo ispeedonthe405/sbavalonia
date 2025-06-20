@@ -33,11 +33,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\sbavalonia.controls\sbavalonia.controls.csproj" />
-    <ProjectReference Include="..\sbavalonia.symbols\sbavalonia.symbols.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <Reference Include="sbavalonia.controls">
+      <HintPath>..\..\libs\sbavalonia.controls.dll</HintPath>
+    </Reference>
+    <Reference Include="sbavalonia.symbols">
+      <HintPath>..\..\libs\sbavalonia.symbols.dll</HintPath>
+    </Reference>
     <Reference Include="sbdotnet">
       <HintPath>..\..\libs\sbdotnet.dll</HintPath>
     </Reference>
