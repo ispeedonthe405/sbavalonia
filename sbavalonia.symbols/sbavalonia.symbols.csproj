@@ -572,7 +572,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Avalonia" Version="11.3.1" />
+    <PackageReference Include="Avalonia" Version="11.3.2" />
   </ItemGroup>
 
   <ItemGroup>

@@ -10,6 +10,21 @@ namespace sbavalonia.symbols
         private static Color _Symbols_LightTheme = new(255, 31, 31, 31);
         private static Color _Symbols_DarkTheme = new(255, 227, 227, 227);
 
+        /// <summary>
+        /// Default symbol color for Light theme. Read-only.
+        /// </summary>
+        public static Color DefaultLightThemeColor
+        {
+            get => new(255, 31, 31, 31);
+        }
+
+        /// <summary>
+        /// Default symbol color for Dark theme. Read-only.
+        /// </summary>
+        public static Color DefaultDarkThemeColor
+        {
+            get => new(255, 227, 227, 227);
+        }
 
         /// <summary>
         /// This can be changed at any time
@@ -47,6 +62,17 @@ namespace sbavalonia.symbols
                     OnSymbolColorChanged();
                 }
             }
+        }
+
+        /// <summary>
+        /// Resets the theme colors to their default values.
+        /// </summary>
+        /// <remarks>This method restores both the dark and light theme colors to their predefined default
+        /// values. It can be used to revert any customizations made to the theme colors.</remarks>
+        public static void ResetColors()
+        {
+            DarkThemeColor = DefaultDarkThemeColor;
+            LightThemeColor = DefaultLightThemeColor;
         }
 
         /// <summary>

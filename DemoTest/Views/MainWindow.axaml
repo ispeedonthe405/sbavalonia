@@ -18,43 +18,58 @@
 	<Grid Margin="20">
 		
 		<Grid.RowDefinitions>
-			<RowDefinition Height="40"/>
-			<RowDefinition Height="40"/>
-			<RowDefinition Height="40"/>
-			<RowDefinition Height="40"/>
+			<RowDefinition/>
 			<RowDefinition/>
 		</Grid.RowDefinitions>
 
-		<StackPanel Grid.Row="0" Orientation="Horizontal" Spacing="10">
-			<TextBlock VerticalAlignment="Center" Text="Active Theme:"/>
-			<ComboBox Grid.Row="0"
-					  VerticalAlignment="Center"
-					  ItemsSource="{Binding Themes}"
-					  SelectedItem="{Binding SelectedTheme}"/>
-		</StackPanel>
-		
-		<StackPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Top">
-			<!--<Border Width="100" Background="{DynamicResource MenuFlyoutItemForeground}"/>-->
-			<sym:Symbol SymbolName="add" OverrideColor="Orange"/>
-			<sym:Symbol SymbolName="arrow_up" OverrideColor="{DynamicResource TextFillColorPrimary}"/>
-			<sym:Symbol SymbolName="close"/>
-			<Button Height="30" Command="{Binding ToggleSymbolCommand}">
-				<Button.Content>
-					<StackPanel Orientation="Horizontal">
-						<sym:Symbol x:Name="sym" SymbolName="{Binding SymName}" Width="24" Height="24" VerticalAlignment="Center"/>
-						<TextBlock Text="Toggle Symbol Colors" Margin="5,0,0,0" VerticalAlignment="Center"/>
-					</StackPanel>
-				</Button.Content>
-			</Button>
+		<StackPanel Grid.Row="0" Spacing="15">
+			<StackPanel Grid.Row="0" Orientation="Horizontal" Spacing="10">
+				<TextBlock VerticalAlignment="Center" Text="Active Theme:"/>
+				<ComboBox Grid.Row="0"
+						  VerticalAlignment="Center"
+						  ItemsSource="{Binding Themes}"
+						  SelectedItem="{Binding SelectedTheme}"/>
+				<Button Content="Toggle Light/Dark" Command="{Binding ToggleThemeCommand}"/>
+			</StackPanel>
+
+			<StackPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Top">
+				<!--<Border Width="100" Background="{DynamicResource MenuFlyoutItemForeground}"/>-->
+				<sym:Symbol SymbolName="add" OverrideColor="Orange"/>
+				<sym:Symbol SymbolName="arrow_up" OverrideColor="{DynamicResource TextFillColorPrimary}"/>
+				<sym:Symbol SymbolName="close"/>
+				<Button Height="30" Command="{Binding ToggleSymbolCommand}">
+					<Button.Content>
+						<StackPanel Orientation="Horizontal">
+							<sym:Symbol x:Name="sym" SymbolName="{Binding SymName}" Width="24" Height="24" VerticalAlignment="Center"/>
+							<TextBlock Text="Toggle Symbol Colors" Margin="5,0,0,0" VerticalAlignment="Center"/>
+						</StackPanel>
+					</Button.Content>
+				</Button>
+			</StackPanel>
+
+			<ctl:OverlayTextBox Grid.Row="2"
+								Width="200"
+								HorizontalAlignment="Left"
+								IsNumeric="True"
+								Text="{Binding BoundInt}"/>
+
+			<TextBlock Grid.Row="3" Text="{Binding BoundInt}"/>
+
 		</StackPanel>
 
-		<ctl:OverlayTextBox Grid.Row="2"
-							Width="200"
-							HorizontalAlignment="Left"
-							IsNumeric="True"
-							Text="{Binding BoundInt}"/>
-		
-		<TextBlock Grid.Row="3" Text="{Binding BoundInt}"/>
+
+		<StackPanel Grid.Row="1" Spacing="10">
+			
+			<Button Content="Test Grid" Command="{Binding TestGridCommand}"/>
+
+			<DataGrid x:Name="datagrid"
+					  IsReadOnly="False"
+					  AutoGenerateColumns="True"
+					  ItemsSource="{Binding GridData}"
+					  SelectedItem="{Binding SelectedData, Mode=TwoWay}"
+					  VerticalScrollBarVisibility="Visible"
+					  ScrollViewer.AllowAutoHide="False"/>
+		</StackPanel>
 		
 	</Grid>
 </Window>
